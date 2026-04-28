@@ -82,17 +82,6 @@ Key hyperparameters in `train.py`:
 - `n_layers`: 3
 - `d_ff`: 256
 
-## Requirements
-
-- Python 3.7+
-- PyTorch 1.9+
-- NumPy
-- Matplotlib
-
-Install dependencies:
-```bash
-pip install torch numpy matplotlib
-```
 
 ## Outputs
 
