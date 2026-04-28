@@ -105,5 +105,5 @@ This project explores:
 - Automatically uses CUDA GPU if available
 - Falls back to CPU for inference
 
--
+
 For questions or contributions, please refer to the GitHub repository.
