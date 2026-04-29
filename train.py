@@ -21,10 +21,10 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 def main():
     model = TinyTransformerLM(
         vocab_size=VOCAB_SIZE,
-        d_model=96,
-        n_heads=3,
+        d_model=128,
+        n_heads=4,
         n_layers=3,
-        d_ff=256,
+        d_ff=512,
         max_len=SEQ_LEN,
         dropout=0.0,
     ).to(DEVICE)
