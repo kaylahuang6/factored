@@ -6,10 +6,10 @@ class TinyTransformerLM(nn.Module):
     def __init__(
         self,
         vocab_size,
-        d_model=96,
+        d_model=128,
         n_heads=3,
         n_layers=3,
-        d_ff=256,
+        d_ff=512,
         max_len=8,
         dropout=0.0,
     ):
