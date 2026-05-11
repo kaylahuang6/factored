@@ -70,18 +70,6 @@ python figure_factor_panels.py
 ```
 Creates dimension curves and factor panel visualizations.
 
-## Configuration
-
-Key hyperparameters in `train.py`:
-- `VOCAB_SIZE`: 257 (BASE_VOCAB + 1)
-- `SEQ_LEN`: 8
-- `BATCH_SIZE`: 256
-- `NUM_STEPS`: 3000
-- `d_model`: 96
-- `n_heads`: 3
-- `n_layers`: 3
-- `d_ff`: 256
-
 
 ## Outputs
 

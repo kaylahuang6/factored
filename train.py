@@ -2,6 +2,7 @@ import os
 import math
 import torch
 import torch.nn.functional as F
+import numpy as np
 from torch.optim import AdamW
 
 from generator import sample_batch, BASE_VOCAB
@@ -9,7 +10,7 @@ from model import TinyTransformerLM
 
 VOCAB_SIZE = BASE_VOCAB + 1
 SEQ_LEN = 8
-BATCH_SIZE = 256
+BATCH_SIZE = 512
 NUM_STEPS = 10000
 PRINT_EVERY = 50
 SAVE_EVERY = 100
@@ -21,7 +22,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 def main():
     model = TinyTransformerLM(
         vocab_size=VOCAB_SIZE,
-        d_model=128,
+        d_model=120,
         n_heads=4,
         n_layers=3,
         d_ff=512,
@@ -67,7 +68,7 @@ def main():
         if step % PRINT_EVERY == 0 or step == 1:
             avg_loss = sum(loss_history[-50:]) / min(len(loss_history), 50)
             print(f"step {step:4d} | loss = {loss.item():.4f} | avg50 = {avg_loss:.4f}")
-
+    np.save("loss_history.npy", np.array(loss_history))
     torch.save(model.state_dict(), "tiny_transformer_independent.pt")
     print("training finished")
     print("saved: tiny_transformer_independent.pt")
